@@ -79,27 +79,36 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              Container(
-                width: 300,
-                height: 150,
-                decoration: BoxDecoration(
-                  color: themeColorProvider.selectedTheme.themeData.primaryColor
-                      .withOpacity(0.2),
+              // Card with shadow and rounded corners
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
-                  border: Border.all(
-                    color:
-                        themeColorProvider.selectedTheme.themeData.primaryColor,
-                    width: 3,
-                  ),
                 ),
-                child: Center(
-                  child: Text(
-                    "This is a themed rectangle!",
-                    style: currentFontStyle.copyWith(
-                      fontSize: 18,
-                      color: themeColorProvider
-                          .selectedTheme.themeData.primaryColor,
-                    ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Your Quick Information",
+                        style: currentFontStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: themeColorProvider
+                              .selectedTheme.themeData.primaryColor,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        "This is a themed card with some sample text. You can add more content here.",
+                        style: currentFontStyle.copyWith(
+                          fontSize: 16,
+                          color: themeColorProvider
+                              .selectedTheme.themeData.primaryColor,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
               ),
